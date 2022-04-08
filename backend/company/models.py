@@ -1,3 +1,15 @@
 from django.db import models
 
-# Create your models here.
+class Company(models.Model):
+    name = models.CharField(max_length=155)
+    website =models.CharField(max_length=155)
+    phoneNumber = models.PositiveIntegerField
+    address = models.CharField(max_length=155)
+    city =  models.CharField(max_length=55)
+    state =  models.CharField(max_length=55)
+    country =  models.CharField(max_length=55)
+    industryList =  models.CharField(max_length=155)
+
+    def __str__(self) -> str:
+        return str(self.name)
+
