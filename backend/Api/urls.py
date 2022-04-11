@@ -5,9 +5,10 @@ from . import views
 
 router=routers.DefaultRouter()
 
-router.register("signup", views.Signup)
 
+router.register("signup", views.Signup)
+router.register("company", views.Company)
 urlpatterns = [
-    path("login", views.Login.as_view()),
+     path("login", views.Login.as_view()),
     path("",include(router.urls)),
 ]

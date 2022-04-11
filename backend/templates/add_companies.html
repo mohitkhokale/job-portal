@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+ADD NEW COMPANY
+
+ 
+<div class="container">
+<form method="post">
+    {% csrf_token %}
+
+    {{Add_Company.as_p}}
+{{form.as_p}}
+ <input type="submit">
+
+ 
+{% endblock %}

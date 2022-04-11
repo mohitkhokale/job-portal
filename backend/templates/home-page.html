@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+{{Add_Company.as_p}}
+<div class="container">
+    <div class="row">
+
+
+        <table id="myTable">
+            <h1>
+                <center>COMPANY DETAILS</center>
+            </h1>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Property Name</td>
+                    <td>Website</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>State</td>
+                    <td>Country</td>
+                    <td>Industry List</td>
+                    <td>ACTION</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- {{companies}} -->
+                {% for company in companies %}
+                <tr>
+
+                    <td>{{company.id}}</td>
+                    <td>{{company}} </td>
+                    <td>{{company.website}}</td>
+                    <td>{{company.address}}</td>
+                    <td>{{company.city}}</td>
+                    <td>{{company.state}}</td>
+                    <td>{{company.country}}</td>
+                    <td>{{company.industryList}}</td>
+                    <td><a href="{% url 'edit_company' company.id %}">EDIT </a>| <a
+                            href="{% url 'delete_company' company.id %}">DELETE</a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#myTable').DataTable();
+
+
+</script>
+
+
+{% endblock %}
