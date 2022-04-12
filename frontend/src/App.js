@@ -1,13 +1,15 @@
-import "./App.css";
-import Company from "./Components/Company";
-import APICompany from "./Components/APICompany";
-function App() {
-  return (
-    <>
-      <Company />
-      <APICompany />
-    </>
-  );
-}
 
+import NavBar from "./component/NavBar";
+import Footer from "./component/Footer";
+import AddCompany from "./component/AddCompany";
+
+const App=()=>{
+    return(
+        <>
+            <NavBar/>
+            <AddCompany/>
+            <Footer/>
+        </>
+    )
+}
 export default App;
